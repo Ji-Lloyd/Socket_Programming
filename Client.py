@@ -6,9 +6,11 @@ socket_client.connect(('localhost', 9999))
 
 ui_name = input("Enter name:")
 ui_age = input("Enter age:")
+ui_address = input("Enter address:")
 
 socket_client.send(bytes(ui_name, 'utf-8'))
 socket_client.send(bytes(ui_age, 'utf-8'))
+socket_client.send(bytes(ui_address, 'utf-8'))
 
 print(socket_client.recv(1024).decode())
 
